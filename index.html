@@ -1,0 +1,71 @@
+<script type="text/javascript" charset="utf-8">
+  (function(){
+    if (location.pathname.length < 2) return
+
+    var app = location.pathname.replace(/\//g, '')
+
+    var request = new XMLHttpRequest()
+    request.open('GET', '/api/'+app, true)
+    request.setRequestHeader('Accept', 'application/json')
+    request.onload = function() {
+      var canhaz = JSON.parse(this.response)
+      if (canhaz) {
+        document.querySelector("body").classList.add("yes")
+        document.querySelector("h1").innerHTML = "yes"
+      } else {
+        document.querySelector("body").classList.add("no")
+        document.querySelector("h1").innerHTML = "no"
+      }
+    }
+
+    request.send()
+  })()
+</script>
+
+<style type="text/css" media="screen">
+
+  html {
+    margin: 0;
+    padding: 0;
+  }
+
+  body.yes {
+/*    background: url(http://cl.ly/image/0K0A3D3v151t/yes.jpg) no-repeat center center fixed;*/
+    background: url(http://cl.ly/image/2w1k1l0P0E31/yes.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  body.no {
+/*    background: url(http://cl.ly/image/3N322X0J2j1m/no.jpg) no-repeat center center fixed;*/
+    background: url(http://cl.ly/image/051G2r0Q003J/no.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  h1 {
+    font-size: 72px;
+    line-height: 2;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    display: block;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+
+    color: white;
+    font-weight: bold;
+    font-size: 200px;
+    font-family: "helvetica neue", helvetica, arial;
+  }
+
+</style>
+
+<h1></h1>

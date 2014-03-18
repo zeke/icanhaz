@@ -1,0 +1,16 @@
+{
+  "name": "icanhaz",
+  "version": "0.0.0",
+  "description": "I can haz this heroku app name?",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "mocha"
+  },
+  "author": "Zeke Sikelianos <zeke@sikelianos.com> (http://zeke.sikelianos.com/)",
+  "license": "ISC",
+  "dependencies": {
+    "superagent": "^0.17.0",
+    "router": "^0.6.2"
+  }
+}
